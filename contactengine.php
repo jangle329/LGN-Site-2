@@ -1,12 +1,12 @@
 <?php
 $EmailFrom = "Inquiry@ludicrousgamingnetwork.com";
 $EmailTo = "ludicrousgamingnetwork@gmail.com";
-$Subject = "Ludicrous Gaming Network Inquiry";
+$Subject = "Ludicrous Gaming Network";
 $Name = Trim(stripslashes($_POST['Name'])); 
 $Email = Trim(stripslashes($_POST['Email'])); 
 $Message = Trim(stripslashes($_POST['Message'])); 
+$Description = Trim(stripslashes($_POST['Description']));
 // prepare email body text
-$Body = "";
 $Body .= "Name: ";
 $Body .= $Name;
 $Body .= "\n";
@@ -20,7 +20,7 @@ $Body .= "Message: ";
 $Body .= $Message;
 $Body .= "\n";
 // send email 
-$success = mail($EmailTo, $Subject, $Body, "From: <$EmailFrom>");
+$success = mail($EmailTo,"From: <$EmailFrom>");
 // redirect to success page 
 if ($success){
   print "<meta http-equiv=\"refresh\" content=\"0;URL=/index.html#success\">";
